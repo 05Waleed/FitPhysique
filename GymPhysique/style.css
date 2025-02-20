@@ -1,0 +1,861 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #dc030a;
+    --primary-color-dark: rgb(135, 6 12);
+    --text-dark: #0a0a0a;
+    --text-light: #737373;
+    --extralight: #e5e5e5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Oswald", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section_container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section_header {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.section_description {
+    color: var(--text-light);
+}
+
+.btn {
+    padding: .75rem 1.5rem;
+    outline: none;
+    border: none;
+    color: var(--white);
+    border-radius: 2px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn_primary {
+    background-color: var(--primary-color);
+}
+
+.btn_primary:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.btn_secondary {
+    background-color: transparent;
+    border: 1px solid var(--white);
+}
+
+.btn_secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+img {
+    display: flex;
+    width: 100%
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", serif;
+}
+
+nav {
+    background-color: var(--text-dark);
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav_bar {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+}
+
+.nav_header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--text-dark);
+}
+
+.nav_logo img {
+    max-width: 90px;
+}
+
+.nav_menu_btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav_links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--text-dark);
+    transition: .5s;
+    z-index: -1;
+    transform: translateY(-100%);
+}
+
+.nav_links.open {
+    transform: translateY(0);
+}
+
+.nav_links a {
+    font-size: 1.1rem;
+    font-family: var(--header-font);
+    white-space: nowrap;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.nav_links a:hover {
+    color: var(--primary-color);
+}
+
+.header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0.8)), url(Images/header.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header_container {
+    padding-block: 10rem;
+    display: grid;
+}
+
+.header_container h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    font-family: var(--header-font);
+    line-height: 5rem;
+    color: var(--primary-color);
+}
+
+.header_container h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--header-font);
+    line-height: 3rem;
+    color: var(--white);
+}
+
+.header_content p {
+    margin-bottom: 2rem;
+    color: var(--extralight);
+}
+
+.about_header {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+}
+
+.about_header .section_header {
+    font-size: 3rem;
+}
+
+.about_header .section_description {
+    max-width: 300px;
+    margin-inline: auto;
+}
+
+.about_grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 4rem;
+}
+
+.about_card h4 {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 1rem;
+    padding-top: 4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+}
+
+.about_card h4::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 6rem;
+    line-height: 6rem;
+    color: var(--text-dark);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.about_card:nth-child(1) h4::before {
+    content: "01";
+}
+
+.about_card:nth-child(2) h4::before {
+    content: "02";
+}
+
+.about_card:nth-child(3) h4::before {
+    content: "03";
+}
+
+.about_card p {
+    color: var(--text-light);
+}
+
+.session {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive grid */
+    gap: 2rem; /* Space between cards */
+    padding: 3rem;
+}
+
+.session_card {
+    padding: 3rem 2rem; /* Adjust padding for a more balanced look */
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 12px; /* Rounded corners for a sleek look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    position: relative; /* For absolute positioning of content */
+    overflow: hidden; /* Ensure rounded corners and shadows are clipped */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.session_card:hover {
+    transform: translateY(-10px); /* Elevates the card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.session_card:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("Images/session-1.jpg");
+}
+
+.session_card:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("Images/session-2.jpg");
+}
+
+.session_card:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("Images/session-3.jpg");
+}
+
+.session_card:nth-child(4) {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("Images/session-4.jpg");
+}
+
+.session_card h4 {
+    position: relative;
+    isolation: isolate;
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem; /* Increased font size for prominence */
+    font-weight: 600; /* Bold and impactful */
+    font-family: var(--header-font);
+    color: var(--white);
+    text-transform: uppercase; /* Add uppercased styling for emphasis */
+}
+
+.session_card h4::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -5px;
+    right: -5px; /* Extend the underline across the full width of the title */
+    height: 3px; /* Thicker line for more impact */
+    background-color: var(--primary-color);
+    z-index: -1;
+    transform: scaleX(0); /* Initially not visible */
+    transition: transform 0.3s ease; /* Smooth underline animation */
+}
+
+.session_card:hover h4::before {
+    transform: scaleX(1); /* Underline appears on hover */
+}
+
+.session_card p {
+    max-width: 380px; /* Slightly wider for better readability */
+    margin-inline: auto;
+    margin-bottom: 2.5rem; /* More space before the button */
+    font-size: 1.1rem; /* Adjusted text size for readability */
+    color: var(--white);
+    line-height: 1.6; /* Improved line spacing */
+    opacity: 0.85; /* Slight transparency for text */
+}
+
+.session_card .btn {
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.session_card .btn:hover {
+    background-color: var(--secondary-color); /* Change button color on hover */
+}
+
+.trainer_grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Makes it responsive */
+    gap: 2rem; /* Increased gap for cleaner layout */
+}
+
+.trainer_card {
+    background-color: var(--white); /* White background for cards */
+    padding: 2rem; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.trainer_card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.trainer_card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded image corners */
+    margin-bottom: 1.5rem;
+}
+
+.trainer_card h4 {
+    font-size: 1.75rem; /* Larger title for prominence */
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    margin-bottom: 0.5rem; /* Space between title and description */
+}
+
+.trainer_card p {
+    font-size: 1.125rem; /* Slightly larger text */
+    color: var(--text-light);
+    margin-bottom: 1.5rem; /* Space between description and social links */
+    line-height: 1.6; /* Improved line height for better readability */
+}
+
+.trainer_socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* More space between icons */
+    margin-top: 1.5rem; /* Space between description and icons */
+}
+
+.trainer_socials a {
+    font-size: 1.5rem; /* Larger icons */
+    color: var(--text-dark); /* Default icon color */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.trainer_socials a:hover {
+    color: var(--primary-color); /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.membership {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("Images/membership.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 6rem 2rem; /* Adjust padding to create space */
+}
+
+.membership_container .section_header {
+    color: var(--white);
+    font-size: 3.5rem; /* Larger header for emphasis */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: var(--header-font);
+    text-transform: uppercase;
+}
+
+.membership_grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adjust to fit content better */
+    gap: 2rem;
+    justify-items: center; /* Center the cards in each grid item */
+}
+
+.membership_card {
+    padding: 2rem 2.5rem; /* Increased padding for a spacious feel */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+    border-radius: 12px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.membership_card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px var(--primary-color); /* Shadow with glowing effect */
+}
+
+.membership_card h4 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--primary-color); /* Highlight membership title */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.membership_card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+}
+
+.membership_card li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.membership_card li span {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.membership_card h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.membership_card h3 sup {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.membership_card .btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.membership_card .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px); /* Button hover effect */
+}
+
+.membership_card .btn:active {
+    transform: translateY(2px); /* Button press effect */
+}
+
+.swiper {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+    width: 100%;
+}
+
+.client_card {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.client_card img {
+    max-width: 100px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 100%;
+}
+
+.client_card > div {
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--text-light);
+    opacity: 0.5;
+}
+
+.client_card p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.client_card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 80px;
+    color: var(--text-dark);
+}
+
+.swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+.blog {
+    background-color: var(--text-dark);
+}
+
+.blog_container .section_header {
+    color: var(--white);
+}
+
+.blog_grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.blog_card img {
+    margin-bottom: 10px;
+}
+
+.blog_card h4 {
+max-width: calc(100% - 1rem);
+font-size: 1.2rem;
+font-weight: 400;
+font-family: var(--header-font);
+color: var(--white);
+transition: 0.3s;
+}
+
+.blog_card:hover h4 {
+    color: var(--primary-color);
+}
+
+.blog_btn {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.logo_banner {
+    padding-block: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.logo_banner img{
+    max-width: 150px;
+    margin-inline: auto;
+}
+
+.footer {
+    background-color: var(--text-dark);
+}
+
+.footer_container {
+    display: grid;
+    gap: 4rem 2rem;
+}
+
+.footer_logo img {
+margin-bottom: 1rem;
+max-width: 120px;
+}
+
+.footer_col p {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.footer_links {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.footer_links a {
+    color: var(--text-light);
+}
+
+.footer_links a:hover {
+    color: var(--white);
+}
+
+.footer_links a span {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.footer_col h4 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--header-font);
+    color: white;
+}
+
+.gallery_grid {
+    max-width: 275px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.footer_col form {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 2px;
+}
+
+.footer_col input {
+   width: 100%;
+   padding-inline: 1rem;
+   outline: none;
+   border: none;
+   color: var(--text-dark);
+}
+
+.footer_socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer_socials a {
+    padding: 5px 10px;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    background-color: var(--white);
+    border-radius: 100%;
+}
+
+.footer_socials a:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.footer_bar {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+@media (width > 540px) {
+    .about_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .session_card {
+        padding: 7rem 2rem;
+    }
+
+    .trainer_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .membership_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog_grid {
+        grid-template-columns: repeat(2, 1fr );
+    }
+
+    .footer_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width > 768px) {
+    nav {
+        position: static;
+        padding: 1.5rem 1rem;
+    }
+
+    .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .nav_header {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .nav_logo img {
+        max-width: 120px;
+    }
+
+    .nav_menu_btn {
+        display: none;
+    }
+
+    .nav_links {
+        position: static;
+        padding: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: transparent;
+        transform: none;
+        z-index: 1;
+    }
+
+    .header_container {
+        padding-block: 12rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header_content {
+        grid-column: 2/3;
+    }
+
+    .about_header {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .about_header .section_header {
+        text-align: right;
+    }
+
+    .about_header .section_description {
+        text-align: left;
+        margin-inline-start: unset;
+    }
+
+    .about_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .session {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .session_card {
+        padding: 10rem 2rem;
+    }
+
+    .trainer_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .membership_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .membership_container .section_header {
+        font-size: 2.5rem; /* Adjust header font size on smaller screens */
+    }
+
+    .membership_card {
+        padding: 1.5rem; /* Reduce padding for mobile */
+    }
+
+    .membership_card h4 {
+        font-size: 1.75rem; /* Smaller title for mobile */
+    }
+
+    .membership_card h3 {
+        font-size: 2.5rem; /* Adjust price font size */
+    }
+
+    .membership_card .btn {
+        padding: 1rem 2.5rem; /* Adjust button padding */
+    }
+
+    .blog_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .logo_banner {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width > 1024px) {
+    .trainer_grid {
+        gap: 2rem;
+    }
+
+    .membership_grid {
+        gap: 2rem;
+    }
+
+    .membership_card {
+        padding: 2rem;
+    }
+}
